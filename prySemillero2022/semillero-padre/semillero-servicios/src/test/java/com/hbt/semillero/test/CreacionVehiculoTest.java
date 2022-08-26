@@ -1,20 +1,16 @@
 package com.hbt.semillero.test;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
-import org.apache.log4j.Logger;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
 
 import com.hbt.semillero.enums.TipoVehiculoEnum;
 import com.hbt.semillero.poo.Automovil;
-import com.hbt.semillero.poo.Vehiculo;
-
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class CreacionVehiculoTest {
 
@@ -45,10 +41,10 @@ public class CreacionVehiculoTest {
 	 public void ejemploMock() {
 		 Automovil kiaMock = new Automovil();
 		 kiaMock = mock(Automovil.class);
-		 /*
-		  * when(kiaMock.acelerar()).thenReturn("El automovil ha tomado velocidad de 15km/h");
-		assertEquals(kiaMock.acelerar(), "El automovil ha tomado velocidad de 15km/h");
-		  * */
+		
+		 /*when(kiaMock.acelerar()).thenReturn("El automovil ha tomado velocidad de 15km/h");
+		 assertEquals(kiaMock.acelerar(), "El automovil ha tomado velocidad de 15km/h");
+		  */
 		 
 		 LOGGER.info("Finaliza ejecucion del test ejemploMock()");
 		 

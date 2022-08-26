@@ -2,8 +2,8 @@ package com.hbt.semillero.enums;
 /**
  * 
  * <b>Descripción:<b> Clase que determina los enumeradores del atributo tematica para el comic
- * <b>Caso de Uso:<b> 
- * @author Familia
+ * <b>Caso de Uso:<b> Semillero2022
+ * @author Estefania
  * @version
  */
 public enum TematicaEnum {
