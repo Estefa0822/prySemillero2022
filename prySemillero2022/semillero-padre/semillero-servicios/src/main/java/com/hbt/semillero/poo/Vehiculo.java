@@ -117,7 +117,13 @@ public class Vehiculo {
 		return "Vehiculo [modelo=" + modelo + ", tipo=" + tipo + ", peso=" + peso + ", color=" + color + ", capacidad="
 				+ capacidad + ", precio=" + precio + "]";
 	}
-	
+	/**
+	 * 
+	 * Metodo encargado de 
+	 * <b>Caso de Uso</b>
+	 * @author Familia
+	 *
+	 */
 	public void arrancarEnMedio() {
 		System.out.println("El vehiculo va avanzando");
 	}

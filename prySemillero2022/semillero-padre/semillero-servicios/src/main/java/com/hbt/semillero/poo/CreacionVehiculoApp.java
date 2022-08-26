@@ -24,7 +24,7 @@ public class CreacionVehiculoApp {
 				System.out.println("El vehiculo es terrestre");
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println("Estamos presentando un error tecnico");
 		}
 		
 		
