@@ -371,23 +371,19 @@ public class Comic implements Serializable{
 	public void setFechaVenta(LocalDate fechaVenta) {
 		this.fechaVenta = fechaVenta;
 	}
-	
-	
-	
+
 
 	/** 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "Comic [id=" + id + ", nombre=" + nombre + ", tematica=" + tematica + ", color=" + color
-				+ ", fechaVenta=" + fechaVenta + "]";
-		
-		
+		return "Comic [id=" + id + ", nombre=" + nombre + ", editorial=" + editorial + ", tematica=" + tematica
+				+ ", coleccion=" + coleccion + ", numeroPaginas=" + numeroPaginas + ", precio=" + precio + ", autores="
+				+ autores + ", color=" + color + ", fechaVenta=" + fechaVenta + ", estado=" + estado + ", cantidad="
+				+ cantidad + "]";
 	}
 	
-	
-	
-	
+		
 
 }
