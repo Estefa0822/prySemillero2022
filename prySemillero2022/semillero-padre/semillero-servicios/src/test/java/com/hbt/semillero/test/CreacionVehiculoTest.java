@@ -2,7 +2,6 @@ package com.hbt.semillero.test;
 
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;

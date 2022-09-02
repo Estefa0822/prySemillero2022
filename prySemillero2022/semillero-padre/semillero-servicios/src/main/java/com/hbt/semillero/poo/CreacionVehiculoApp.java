@@ -7,12 +7,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.hbt.semillero.enums.EstadoComicEnum;
 import com.hbt.semillero.enums.TipoVehiculoEnum;
 
 public class CreacionVehiculoApp {
 
-	private static final BigDecimal SMLV = new BigDecimal(1000000);
+	//private static final BigDecimal SMLV = new BigDecimal(1000000);
 	private static final String VELOCIDAD_MAXIMA = "Velocidad maxima";
 	
 	public static void main(String[] args) {
