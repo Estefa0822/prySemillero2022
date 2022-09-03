@@ -49,13 +49,45 @@ public class GestionarComicRest {
 		return this.gestionarComicLocal.consultarNombrePrecioComic(idComic);
 	}
 	
-	@Path("/crearComic")
+	
 	@POST
+	@Path("/crearComic")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public ResultadoDTO crearComic() {
-		
-		return null;
+	public ResultadoDTO crearComic(ComicDTO comicDTO) {
+		ResultadoDTO resultadoDTO = new ResultadoDTO();
+		try {
+			resultadoDTO = this.gestionarComicLocal.crearComic(comicDTO);
+		} catch (Exception e) {
+			resultadoDTO.setExitoso(false);
+			resultadoDTO.setMensaje(e.getMessage());
+		}		
+		return resultadoDTO;
 	}
-
+	
+	/**
+	 * 
+	 * Metodo encargado de enviar a actualizar un comic
+	 * <b>Caso de Uso</b>Semillero2022-Practica
+	 * @author Estefania Gomez Cardenas	 * 
+	 * @param comicDTO
+	 * @return resultadoDTO
+	 */
+	
+	@POST
+	@Path("/modificarComic")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public ResultadoDTO modificarComic(ComicDTO comicDTO) {
+		ResultadoDTO resultadoDTO = new ResultadoDTO();
+		try {
+			resultadoDTO = this.gestionarComicLocal.modificarComic(comicDTO);
+		} catch (Exception e) {
+			resultadoDTO.setMensaje("No se pudo actualizar el comic " + e.getMessage());
+			resultadoDTO.setExitoso(false);
+		}		
+		return resultadoDTO;
+	}
+	
+	
 }

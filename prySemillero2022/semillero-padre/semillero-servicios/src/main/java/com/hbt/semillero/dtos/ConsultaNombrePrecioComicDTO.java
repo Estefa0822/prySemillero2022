@@ -10,10 +10,14 @@ import java.io.Serializable;
  */
 
 import java.math.BigDecimal;
+
+import com.hbt.semillero.util.JsonUtils;
+
+
 public class ConsultaNombrePrecioComicDTO extends ResultadoDTO implements Serializable {
 
 	/**
-	 * Atributo que determina  
+	 * Atributo que permite la serializacion  
 	 */
 	private static final long serialVersionUID = 1L;
 	
@@ -34,8 +38,6 @@ public class ConsultaNombrePrecioComicDTO extends ResultadoDTO implements Serial
 		this.nombre = nombre;
 		this.precio = precio;
 	}
-
-
 
 	/**
 	 * Metodo encargado de retornar el valor del atributo nombre
@@ -66,12 +68,30 @@ public class ConsultaNombrePrecioComicDTO extends ResultadoDTO implements Serial
 		this.precio = precio;
 	}
 	/**
-	 * Metodo encargado de retornar el valor del atributo serialVersionUID
-	 * @return El serialversionuid asociado a la clase
+	 * 
+	 * Metodo encargado de convertir los datos recibidos en JSON al tipo comicDTO 
+	 * <b>Caso de Uso</b> Semillero2022
+	 * @author Estefanía Gomez Cardenas	 * 
+	 * @param arg Cadena que representa el objeto complejo JSON
+	 * @return Instancia con los datos recibidos
 	 */
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public static ComicDTO valueOf(String arg) {
+		return JsonUtils.valueOf(arg, ComicDTO.class);
 	}
+	
+
+	/** 
+	 * Metodo encargado de convertir los datos recibidos en ComicDTO al JSON esperado
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return JsonUtils.toStringJson(this);
+	}
+	
+	
+	
+	
 
 
 

@@ -159,7 +159,7 @@ public class SemilleroJPQLRest {
 			comicThor.setColeccion("las aventuras de abeja");
 			comicThor.setNumeroPaginas(12);
 			comicThor.setPrecio(new BigDecimal(1200));
-			comicThor.setEstado(EstadoComicEnum.ACTIVO);
+			comicThor.setEstadoEnum(EstadoComicEnum.ACTIVO);
 			comicThor.setCantidad((short)5);
 			
 			//INSERT

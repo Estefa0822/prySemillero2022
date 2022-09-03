@@ -260,7 +260,7 @@ public class Comic implements Serializable{
 	 * Metodo encargado de retornar el valor del atributo estado
 	 * @return El estado asociado a la clase
 	 */
-	public EstadoComicEnum getEstado() {
+	public EstadoComicEnum getEstadoEnum() {
 		return estadoEnum;
 	}
 
@@ -270,7 +270,7 @@ public class Comic implements Serializable{
 	 * Metodo encargado de modificar el valor del atributo estado
 	 * @param estado El nuevo estado a modificar.
 	 */
-	public void setEstado(EstadoComicEnum estado) {
+	public void setEstadoEnum(EstadoComicEnum estado) {
 		this.estadoEnum = estado;
 	}
 

@@ -142,7 +142,7 @@ public class CreacionComicTest {
 		System.out.println("Listado los comics activos:");
 		for (Comic comic : listaComics) {
 			//Si el comic tiene estado activo, entonces lo adiciona a la lista de comic activos
-			if (comic.getEstado().equals(EstadoComicEnum.ACTIVO)) {
+			if (comic.getEstadoEnum().equals(EstadoComicEnum.ACTIVO)) {
 				listaComicsActivos.add(comic);				
 				System.out.println(comic.toString());
 			}			
@@ -161,7 +161,7 @@ public class CreacionComicTest {
 		System.out.println("Listando los comics inactivos:");
 		for (Comic comic : listaComics) {
 			//Si el comic tiene estado inactivo, entonces lo adiciona a la lista de comic inactivos
-			if (comic.getEstado().equals(EstadoComicEnum.INACTIVO)) {
+			if (comic.getEstadoEnum().equals(EstadoComicEnum.INACTIVO)) {
 				listaComicsInactivos.add(comic);				
 				System.out.println(comic.toString());
 			}			
@@ -207,7 +207,7 @@ public class CreacionComicTest {
 		List <Comic> listaComicsActivos = obtenerComicsActivos();
 		assertNotNull(listaComicsActivos); //Se espera que no sea nula, puesto que en inicializar se configuraron algunas activas
 		for (Comic comic : listaComicsActivos) {
-			assertEquals(comic.getEstado(),EstadoComicEnum.ACTIVO);
+			assertEquals(comic.getEstadoEnum(),EstadoComicEnum.ACTIVO);
 		}
 		LOGGER.info("Finaliza la prueba del método obtenerComicsActivos");
 	}
@@ -228,7 +228,7 @@ public class CreacionComicTest {
 		//cuando se verifique el estado de cualquier comic, se va a indicar que es Activo
 		Comic comic = new Comic();
 		comic = mock(Comic.class);
-		when(comic.getEstado()).thenReturn(EstadoComicEnum.ACTIVO);
+		when(comic.getEstadoEnum()).thenReturn(EstadoComicEnum.ACTIVO);
 		
 		assertTrue(verificarEstado()); //se espera que todos los comics estén activos
 		LOGGER.info("Finaliza la prueba del método verificarEstado");
@@ -249,7 +249,7 @@ public class CreacionComicTest {
 		//cuando se verifique el estado de cualquier comic, se va a indicar que es inactivo
 		Comic comic = new Comic();
 		comic = mock(Comic.class);
-		when(comic.getEstado()).thenReturn(EstadoComicEnum.INACTIVO);
+		when(comic.getEstadoEnum()).thenReturn(EstadoComicEnum.INACTIVO);
 		
 		try {
 			resultado = verificarEstado();
@@ -272,7 +272,7 @@ public class CreacionComicTest {
 		System.out.println("Prueba: Verificar estado falla");
 		boolean resultado = false;
 		assertNotNull(listaComics); //Se espera que la lista de comics NO sea nula
-		listaComics.get(0).setEstado(EstadoComicEnum.INACTIVO); //pone un item inactivo		
+		listaComics.get(0).setEstadoEnum(EstadoComicEnum.INACTIVO); //pone un item inactivo		
 		try {
 			resultado = verificarEstado();
 		} catch (Exception e) {
@@ -291,7 +291,7 @@ public class CreacionComicTest {
 		assertNotNull(listaComics); //Se espera que la lista de comics NO sea nula
 		//Activa todos los comics que estén en la lista
 		for (Comic comic : listaComics) {
-			comic.setEstado(EstadoComicEnum.ACTIVO);			
+			comic.setEstadoEnum(EstadoComicEnum.ACTIVO);			
 		}
 		
 		try {
