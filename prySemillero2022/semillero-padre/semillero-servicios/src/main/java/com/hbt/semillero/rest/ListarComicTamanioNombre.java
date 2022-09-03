@@ -23,6 +23,15 @@ public class ListarComicTamanioNombre {
 	@EJB
 	private IListarComicLocal listarComic;
 	
+	/**
+	 * 
+	 * Metodo encargado de listar los comics que superan el tamaño del valor ingresado por parámetro
+	 * <b>Caso de Uso</b> Semillero2022TallerRest
+	 * @author Estefania Gomez Cardenas
+	 * 
+	 * @param lenghtComic Tamaño para comparar
+	 * @return ListarComicTamanioNombreDTO
+	 */
 	@GET
 	@Path("/consultarComicTamanioNombre")
 	@Produces(MediaType.APPLICATION_JSON)

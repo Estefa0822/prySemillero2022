@@ -26,6 +26,13 @@ public class ListarComicBean implements IListarComicLocal {
 	@PersistenceContext
 	private EntityManager em;
 	
+	/**
+	 * Metodo encargado de consultar todos los comic en la base de datos y 
+	 * clasificarlos en dos listas según su tamaño 
+	 * <b>Caso de Uso</b>
+	 * @param tamanio Short Tamaño con el cual se va a realizar la comparación
+	 * @return ListarComicTamanioNombreDTO
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)

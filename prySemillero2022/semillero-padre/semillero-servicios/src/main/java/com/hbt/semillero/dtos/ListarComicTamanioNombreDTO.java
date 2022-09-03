@@ -79,8 +79,7 @@ public class ListarComicTamanioNombreDTO extends ResultadoDTO implements Seriali
 	 * 
 	 * Metodo encargado de insertar un nombre de comic que superta un determinado tamaño  
 	 * <b>Caso de Uso</b> Semillero2022TallerRest
-	 * @author Estefania Gomez Cardenas
-	 * 
+	 * @author Estefania Gomez Cardenas 
 	 * @param nombreComic
 	 */
 	public void addComicSuperaTamanio(String nombreComic) {
