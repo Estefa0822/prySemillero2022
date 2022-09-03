@@ -28,7 +28,7 @@ public class ListarComicBean implements IListarComicLocal {
 	
 	/**
 	 * Metodo encargado de consultar todos los comic en la base de datos y 
-	 * clasificarlos en dos listas según su tamaño 
+	 * clasificarlos en dos listas según la longitud del nombre
 	 * <b>Caso de Uso</b>
 	 * @param tamanio Short Tamaño con el cual se va a realizar la comparación
 	 * @return ListarComicTamanioNombreDTO
