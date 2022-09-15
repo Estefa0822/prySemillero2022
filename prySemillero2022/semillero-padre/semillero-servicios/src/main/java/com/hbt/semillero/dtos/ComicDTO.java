@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import com.hbt.semillero.enums.EstadoComicEnum;
 import com.hbt.semillero.enums.TematicaEnum;
 
-public class ComicDTO {
+public class ComicDTO extends ResultadoDTO {
 	
 	private Long id;
 	/*

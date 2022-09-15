@@ -1,0 +1,49 @@
+<div class="container">
+    <h1>Comprar comic</h1>
+    <hr>
+    <br>
+    <div class="row">
+    
+        <div class="col-6">
+            <label for="txtNombre">Nombre Comic </label>
+            <input id="txtNombre" type="text" class="form-control" [(ngModel)]="comicDTO.nombre">
+        </div>
+
+    </div>
+
+    <div>
+        <span></span>
+    </div>
+
+    <div class="row">
+    
+        <div class="col-6">
+            <label for="txtCantidad">Cantidad a comprar: </label>
+            <input id="txtCantidad" type="number" class="form-control" >
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <button type="button" class="btn btn-primary" (click)="comprarComic()">Comprar</button>
+        </div>
+        <div class="col-6">
+            <button type="button" class="btn btn-primary" (click)="retornar()">Cancelar</button>
+        </div>
+    </div>
+
+    <div *ngIf="exitoso && mostrarItem" class="alert alert-primary" role="alert">
+        {{ mensajeEjecucion }}
+        <button type="button" class="btn btn-primary" (click)="cerrar()">Cerrar</button>            
+    </div>
+
+    <div *ngIf="!exitoso && mostrarItem" class="alert alert-danger" role="alert">
+        {{ mensajeEjecucion }}
+        <button type="button" class="btn btn-primary" (click)="cerrar()">Cerrar</button>            
+    </div>
+
+
+
+
+
+</div>

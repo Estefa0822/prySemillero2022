@@ -1,5 +1,7 @@
 package com.hbt.semillero.poo.interfaces;
 
+import java.util.List;
+
 import com.hbt.semillero.dtos.ComicDTO;
 import com.hbt.semillero.dtos.ConsultaNombrePrecioComicDTO;
 import com.hbt.semillero.dtos.ListarComicTamanioNombreDTO;
@@ -12,6 +14,8 @@ public interface IGestionarComicLocal {
 	public ResultadoDTO crearComic(ComicDTO comicDTO) throws Exception;
 	
 	public ResultadoDTO modificarComic(ComicDTO comicDTO) throws Exception;
+	
+	public List<ComicDTO> obtenerComics();
 	
 	
 	

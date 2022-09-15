@@ -2,6 +2,8 @@ package com.hbt.semillero.rest;
 
 
 
+import java.util.List;
+
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -88,6 +90,15 @@ public class GestionarComicRest {
 		}		
 		return resultadoDTO;
 	}
+	
+	@GET
+	@Path("/obtenerComics")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public List<ComicDTO> obtenerComics(){
+		return this.gestionarComicLocal.obtenerComics();
+	}
+	
 	
 	
 }

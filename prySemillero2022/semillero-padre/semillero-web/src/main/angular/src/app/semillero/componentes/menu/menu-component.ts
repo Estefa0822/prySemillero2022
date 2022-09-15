@@ -47,4 +47,8 @@ export class MenuComponent implements OnInit {
   public navegarGestionarCompra(): void {
     //WIP
   }
+  //Hace rounting hacia el componente de gestionar comic
+  public irAGestionarComic():void{
+    this.router.navigate(['gestionar-comic'])
+  }
 }

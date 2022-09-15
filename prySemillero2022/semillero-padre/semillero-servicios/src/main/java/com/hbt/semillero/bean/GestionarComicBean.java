@@ -1,5 +1,6 @@
 package com.hbt.semillero.bean;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -7,7 +8,6 @@ import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 import javax.ejb.TransactionManagement;
 import javax.ejb.TransactionManagementType;
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
@@ -31,7 +31,7 @@ import com.hbt.semillero.poo.interfaces.IGestionarComicLocal;
  */
 
 // @Stateless = Cada transaccion de manera autónoma
-
+@SuppressWarnings("unchecked")
 @Stateless
 @TransactionManagement(TransactionManagementType.CONTAINER)
 public class GestionarComicBean implements IGestionarComicLocal {
@@ -167,6 +167,42 @@ public class GestionarComicBean implements IGestionarComicLocal {
 		
 	}
 	
+	
+	@Override
+	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+	public List<ComicDTO> obtenerComics() {
+		List<Comic> listaComics = new ArrayList<>();
+		List<ComicDTO> listaComicsDTO = new ArrayList<ComicDTO>();
+		String listarComics = "SELECT c "
+							+ " FROM Comic c";
+		Query queryListaComics = em.createQuery(listarComics);
+		try {
+			listaComics = queryListaComics.getResultList();
+			
+			if (listaComics.size()==0) { //Si la lista no contiene datos, entonces deberá enviar que no fue exitoso
+				ComicDTO resultado= new ComicDTO();
+				resultado.setExitoso(false);
+				resultado.setMensaje("No hay datos para mostrar");
+				listaComicsDTO.add(resultado);
+			}else {
+				for (Comic comic : listaComics) {
+					listaComicsDTO.add(convertirComicToComicDTO(comic));
+				}
+				listaComicsDTO.get(0).setExitoso(true);
+				listaComicsDTO.get(0).setMensaje("Se encontraron datos");			
+			}
+		} catch (Exception e) {
+			ComicDTO resultado= new ComicDTO();
+			resultado.setExitoso(false);
+			resultado.setMensaje("Ha ocurrido un error tecnico");
+			listaComicsDTO.add(resultado);
+			LOGGER.info("ha ocurrido un error técnico " + e.getMessage());
+		}
+				
+		return listaComicsDTO;
+	}
+	
+	
 	/**
 	 * 
 	 * Metodo encargado de  convertir un comicDTO en un comic
@@ -193,6 +229,25 @@ public class GestionarComicBean implements IGestionarComicLocal {
 		
 		return comic;
 	}
+	
+	private ComicDTO convertirComicToComicDTO(Comic comic) {
+		ComicDTO comicDTO = new ComicDTO();
+		comicDTO.setId(comic.getId());
+		comicDTO.setNombre(comic.getNombre());
+		comicDTO.setEditorial(comic.getEditorial());
+		comicDTO.setTematicaEnum(comic.getTematica());
+		comicDTO.setColeccion(comic.getColeccion());
+		comicDTO.setNumeroPaginas(comic.getNumeroPaginas());
+		comicDTO.setPrecio(comic.getPrecio());
+		comicDTO.setAutores(comic.getAutores());
+		comicDTO.setColor(comic.getColor());
+		comicDTO.setFechaVenta(comic.getFechaVenta());
+		comicDTO.setEstadoEnum(comic.getEstadoEnum());
+		comicDTO.setCantidad(comic.getCantidad());
+		return comicDTO;
+	}
+
+	
 	
 	
 

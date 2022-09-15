@@ -25,37 +25,37 @@ export class CrearPersonaComponent implements OnInit{
 
         this.imagen = this.asignarImagen(url, height, width);
 
-        let comics = new Map<string, Array<ComicDTO>>();
-        this.comicsTematicaHorror = new Array<ComicDTO>();
+        // let comics = new Map<string, Array<ComicDTO>>();
+        // this.comicsTematicaHorror = new Array<ComicDTO>();
         
-        let comicBatman = new ComicDTO("batman",TematicaEnum.HORROR, 900);
-        let comicDragonBall = new ComicDTO("Dragon Ball", TematicaEnum.HORROR, 800);
+        // let comicBatman = new ComicDTO("batman",TematicaEnum.HORROR, 900);
+        // let comicDragonBall = new ComicDTO("Dragon Ball", TematicaEnum.HORROR, 800);
 
-        this.comicsTematicaHorror.push(comicBatman);
-        this.comicsTematicaHorror.push(comicDragonBall);
+        // this.comicsTematicaHorror.push(comicBatman);
+        // this.comicsTematicaHorror.push(comicDragonBall);
 
-        this.comicsTematicaHumoristico = new Array<ComicDTO>();
-        let comicChavo = new ComicDTO("Chavo del ocho", TematicaEnum.HUMORISTICO, 765);
-        let comicChapulin = new ComicDTO("Chapulin colorado", TematicaEnum.HUMORISTICO,450);
+        // this.comicsTematicaHumoristico = new Array<ComicDTO>();
+        // let comicChavo = new ComicDTO("Chavo del ocho", TematicaEnum.HUMORISTICO, 765);
+        // let comicChapulin = new ComicDTO("Chapulin colorado", TematicaEnum.HUMORISTICO,450);
 
-        this.comicsTematicaHumoristico.push(comicChavo);
-        this.comicsTematicaHumoristico.push(comicChapulin);
+        // this.comicsTematicaHumoristico.push(comicChavo);
+        // this.comicsTematicaHumoristico.push(comicChapulin);
 
-        //Mapa
-        //Asigno a horror, la lista de comics de horror
-        comics.set(TematicaEnum.HORROR, this.comicsTematicaHorror);
-        //Asigno a humoristico, la lista de comics de humor
-        comics.set(TematicaEnum.HUMORISTICO, this.comicsTematicaHumoristico);
+        // //Mapa
+        // //Asigno a horror, la lista de comics de horror
+        // comics.set(TematicaEnum.HORROR, this.comicsTematicaHorror);
+        // //Asigno a humoristico, la lista de comics de humor
+        // comics.set(TematicaEnum.HUMORISTICO, this.comicsTematicaHumoristico);
 
-        let comicHumoristicos = comics.get(TematicaEnum.HUMORISTICO);
-        console.log("Comics humoristicos " + JSON.stringify(comicHumoristicos) );
-        comics.forEach((value: Array<ComicDTO>, key: string) =>{
-            if(TematicaEnum.HORROR == key){
-                console.log("Lista comics horror: " + key + " " + JSON.stringify(value));
-            }else{
-                console.log("Lista de comics humoristico " + key + " " + JSON.stringify(value));
-            }
-        });
+        // let comicHumoristicos = comics.get(TematicaEnum.HUMORISTICO);
+        // console.log("Comics humoristicos " + JSON.stringify(comicHumoristicos) );
+        // comics.forEach((value: Array<ComicDTO>, key: string) =>{
+        //     if(TematicaEnum.HORROR == key){
+        //         console.log("Lista comics horror: " + key + " " + JSON.stringify(value));
+        //     }else{
+        //         console.log("Lista de comics humoristico " + key + " " + JSON.stringify(value));
+        //     }
+        // });
 
 
 
